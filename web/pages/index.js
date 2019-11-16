@@ -12,7 +12,12 @@ export default {
       isLoading: false,
       isLoginLoading: false,
       isRegLoading: false,
-      isLoginFbLoading: false
+      isLoginFbLoading: false,
+      mode: 'login',
+      dob_day: null,
+      dob_month: null,
+      dob_year: null,
+      lifespan: null
     }
   },
   computed: {
@@ -29,7 +34,11 @@ export default {
         method: 'post',
         data: {
           account: this.account,
-          password: this.password
+          password: this.password,
+          dob_day: this.dob_day,
+          dob_month: this.dob_month,
+          dob_year: this.dob_year,
+          lifespan: this.lifespan
         }
       });
       this.handleLogin(res);

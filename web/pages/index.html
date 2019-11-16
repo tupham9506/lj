@@ -3,7 +3,7 @@
   <div class="big-title lj-disable-select" v-html="$t('login.bigTitle')"></div>
   <div class="login-form">
     <form class="p-5 h-100" @submit.prevent="login">
-      <p class="text-center h4 mb-4 lj-disable-select">{{ $t('login.loginTitle') }}</p>
+      <p class="text-center h4 mb-4 lj-disable-select">{{ $t(`login.loginTitle_${mode}`) }}</p>
       <error-message class="lj-disable-select" :message="errorMessage.common" />
       <div class="form-group row">
         <div class="col-12">
@@ -17,25 +17,66 @@
           <error-message class="lj-disable-select" :message="errorMessage.password" />
         </div>
       </div>
+      <div v-if="mode == 'register'">
+        <div class="form-group row">
+          <div class="col-4">
+            <input v-mask="'##'" class="form-control lj-disable-select"  :placeholder="$t('login.dob_day')" v-model="dob_day" />
+          </div>
+          <div class="col-4">
+            <input v-mask="'##'" class="form-control lj-disable-select" :placeholder="$t('login.dob_month')" v-model="dob_month" />
+          </div>
+          <div class="col-4">
+            <input v-mask="'####'" class="form-control lj-disable-select" :placeholder="$t('login.dob_year')" v-model="dob_year" />
+          </div>
+          <error-message class="col-12 lj-disable-select" :message="errorMessage.dob_year" />
+        </div>
+        <div class="form-group row">
+          <div class="col-12">
+            <input v-mask="'###'" class="form-control lj-disable-select"  :placeholder="$t('login.lifespan')" v-model="lifespan" />
+            <error-message class="lj-disable-select" :message="errorMessage.lifespan" />
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-7 label-control btn-register lj-disable-select" @click="mode = 'login'; errorMessage = {};">
+            {{ $t('login.login') }}
+          </label>
+          <div class="col-5">
+            <button type="button" v-if="this.isLoading != 'register'" class="btn btn-success btn-block" @click="register">
+              {{ $t('login.registerButton') }}
+            </button>
+            <button type="button" v-if="this.isLoading == 'register'" class="btn btn-success btn-block lj-disabled">
+              <Fa :icon="['fas', 'spinner']" />
+              {{ $t('login.registeringButton') }}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div v-if="mode == 'login'">
+        <div class="row mb-2">
+          <label class="col-7 label-control btn-register lj-disable-select" @click="mode = 'register'; errorMessage = {};">
+            {{ $t('login.register') }}
+          </label>
+          <div class="col-5">
+            <button type="submit" v-if="this.isLoading != 'login'" class="btn btn-success btn-block">
+              {{ $t('login.loginButton') }}
+            </button>
+            <button type="button" v-if="this.isLoading == 'login'" class="btn btn-success btn-block lj-disabled">
+              <Fa :icon="['fas', 'spinner']" />
+              {{ $t('login.loginButton') }}
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="row mb-2">
         <!-- Register button -->
-        <label v-if="this.isLoading != 'register'" class="col-7 label-control btn-register  lj-disable-select" @click="register">
+        <!-- <label v-if="this.isLoading != 'register'" class="col-7 label-control btn-register  lj-disable-select" @click="register">
           {{ $t('login.registerButton') }}
         </label>
         <label v-if="this.isLoading == 'register'" class="col-7 label-control btn-register text-decoration-none lj-disable-select">
           <Fa :icon="['fas', 'spinner']" />
           {{ $t('login.registeringButton') }}
-        </label>
+        </label> -->
         <!-- Login button -->
-        <div class="col-5">
-          <button type="submit" v-if="this.isLoading != 'login'" class="btn btn-success btn-block">
-            {{ $t('login.loginButton') }}
-          </button>
-          <button type="button" v-if="this.isLoading == 'login'" class="btn btn-success btn-block lj-disabled">
-            <Fa :icon="['fas', 'spinner']" />
-            {{ $t('login.loginButton') }}
-          </button>
-        </div>
       </div>
       <!-- Login Fb button -->
       <button type="button" v-if="this.isLoading != 'loginFb'" class="btn btn-primary btn-block" @click="loginFb">

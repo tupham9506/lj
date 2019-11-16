@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row mb-2">
-      <div class="col-12">
+      <div class="col-6">
         <div>
           {{ $t('journey.lived') }}
           {{ livedTimes }}/{{ totalTimes }}
@@ -21,15 +21,21 @@
           {{ $t('journey.life') }}
         </div>
       </div>
+      <div class="col-6">
+        <div v-if="blockView">
+          {{ $moment(blockView.time).format($store.state.dateFormat) }}
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-12">
         <div v-if="Object.keys(blocks).length">
-          <div v-for="(item, index) in blocks" :key="`journey-${index}`">
+          <div v-for="(item, index) in blocks" :key="`journey-${index}`" @click="openEvent(item)" @mouseover="viewBlock(item)">
             <block :block="item"/>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <event :modal="eventModal"/>
 </div>

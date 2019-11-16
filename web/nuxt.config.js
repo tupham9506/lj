@@ -45,6 +45,10 @@ export default {
     {
       src: '~/plugins/fb.js',
       mode: 'client'
+    },
+    {
+      src: '~/plugins/vue-the-mask.js',
+      mode: 'client'
     }
   ],
   /*
@@ -87,8 +91,8 @@ export default {
   server: {
     port: '9507',
     https: {
-      key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
-      cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
+      key: fs.readFileSync(path.resolve(__dirname, 'hanhtrinh.dev-key.pem')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'hanhtrinh.dev.pem'))
     }
   },
   router: {

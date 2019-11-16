@@ -1,15 +1,22 @@
 {
   "login": {
     "bigTitle": "Hành Trình <br/> Của Bạn",
-    "loginTitle": "Đăng nhập",
+    "loginTitle_login": "Đăng nhập",
+    "loginTitle_register": "Đăng ký",
     "intro": "Kỷ niệm nào làm bạn hạnh phúc. <br/> Quá khứ nào khiến bạn nuối tiếc. <br/> Tương lai nào bạn muốn hướng đến.",
     "account": "Tài khoản",
     "password": "Mật khẩu",
     "loginByFacebookButton": "Đăng nhập bằng Facebook",
     "loginButton": "Đăng nhập",
-    "registerButton": "Đăng ký với thông tin trên",
+    "registerButton": "Đăng ký",
     "registeringButton": "Đang đăng ký",
-    "logingFb": "Đang kết nối với facebook"
+    "logingFb": "Đang kết nối với facebook",
+    "register": "Đăng ký",
+    "login": "Đăng nhập",
+    "dob_day": "Ngày",
+    "dob_month": "Tháng",
+    "dob_year": "Năm",
+    "lifespan": "Tuổi thọ ước tính"
   },
   "journey": {
     "viewMode": "Chế độ xem",

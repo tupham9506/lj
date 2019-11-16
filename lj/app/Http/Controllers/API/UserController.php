@@ -26,11 +26,19 @@ class UserController extends Controller {
   public function register(Request $request) {
     $validator = Validator::make($request->all(), [
       'account' => 'required|unique:users,account',
-      'password' => 'required'
+      'password' => 'required',
+      'dob_day' => 'required',
+      'dob_month' => 'required',
+      'dob_year' => 'required',
+      'lifespan' => 'required',
     ], [
       'account.required' => trans('register.account.required'),
       'account.unique' => trans('register.account.unique'),
       'password.required' => trans('register.password.required'),
+      'dob_day.required' => trans('register.dob.required'),
+      'dob_month.required' => trans('register.dob.required'),
+      'dob_year.required' => trans('register.dob.required'),
+      'lifespan.required' => trans('register.lifespan.required'),
     ]);
     if ($validator->fails()) {
       return response()->json([
@@ -61,9 +69,6 @@ class UserController extends Controller {
     ]);
 
     try {
-      $response = $fb->get('/me/feed?fields=id,message', $input['access_token'])->getGraphEdge();
-      dd($response);
-
       $response = $fb->get('/me?fields=id,name,picture', $input['access_token']);
         $profile = $response->getGraphUser();
         if (empty($profile['id'])) {
@@ -91,7 +96,6 @@ class UserController extends Controller {
         $user['token'] = $user->createToken('tokenlj')->accessToken;
         return response()->json(['user' => $user], 200);
     } catch (\Exception $e) {
-      dd($e);
        return response()->json([
           'messages' => [
             'common' => trans('login.fb_fail')

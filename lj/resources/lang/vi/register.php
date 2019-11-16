@@ -6,5 +6,11 @@
     ],
     'password' => [
       'required' => 'Vui lòng nhập mật khẩu'
+    ],
+    'dob' => [
+      'required' => 'Vui lòng nhập sinh nhật'
+    ],
+    'lifespan' => [
+      'required' => 'Vui lòng ước tính tuổi thọ của bạn'
     ]
   ];

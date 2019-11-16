@@ -1,10 +1,12 @@
 import block from '@components/block';
 import modeSelection from '@components/mode-selection';
+import event from '@components/event';
 export default {
   name: 'journey',
   components: {
     block,
-    modeSelection
+    modeSelection,
+    event
   },
   props: {
     user: Object,
@@ -15,7 +17,9 @@ export default {
       blockMode: 'months',
       lifePercent: 0,
       livedTimes: 0,
-      totalTimes: 0
+      totalTimes: 0,
+      eventModal: false,
+      blockView: null
     }
   },
   computed: {
@@ -66,20 +70,12 @@ export default {
       this.lifePercent = Math.round(
         (this.$moment().get('years') - this.user.dob_year) * 100 * 100 / this.user.lifespan
       ) / 100;
-
-      // this.getAllPost();
     },
-    getAllPost () {
-      this.$fb.api("/me/feed",
-      {
-
-      },
-      function (response) {
-        console.log("response", response);
-        if (response && !response.error) {
-          /* handle the result */
-        }
-      })
+    openEvent(item) {
+      // this.eventModal = true;
+    },
+    viewBlock (item) {
+      this.blockView = item
     }
   }
 }
