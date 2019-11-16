@@ -1,0 +1,27 @@
+.sidebar {
+  height: 100%;
+  width: 100%;
+  border-left: 1px solid #ddd;
+}
+
+.auth-info {
+  border:none;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  padding: 10px;
+}
+
+.option {
+  a {
+    font-weight: 300;
+    font-size: 12px;
+  }
+  button {
+    padding: 0;
+    box-shadow: none;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+}

@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lj
+      MYSQL_USER: lj
+      MYSQL_PASSWORD: lj
+    networks:
+      lj_net:
+        ipv4_address: 172.14.0.10
+    ports:
+      - "9508:3306"
+
+  web:
+    depends_on:
+      - db
+    build:
+      context: ./docker
+      args:
+        - INSTALL_SSH=false
+        - INSTALL_APACHE_PHP=true
+        - INSTALL_XDEBUG=true
+    extra_hosts:
+      # IMPORTANT: Replace with your Docker Host IP (will be appended to /etc/hosts)
+      - "docker-host:172.14.0.1"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      lj_net:
+        ipv4_address: 172.14.0.11
+    restart: always
+    environment:
+      PHP_XDEBUG_ENABLED: 1
+    ports:
+      - "9506:80"
+networks:
+  lj_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.14.0.0/24
+          gateway: 172.14.0.1

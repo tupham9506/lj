@@ -1,0 +1,49 @@
+.shadow-danger {
+  text-shadow: 1px 0 0 #dc3545, -1px 0 0 #dc3545, 0 1px 0 #dc3545, 0 -1px 0 #dc3545, 1px 1px #dc3545, -1px -1px 0 #dc3545, 1px -1px 0 #dc3545, -1px 1px 0 #dc3545;
+}
+
+.shadow-white {
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.shadow-black {
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+
+.font-12 { font-size: 12px }
+.font-13 { font-size: 13px }
+.font-14 { font-size: 14px }
+.font-15 { font-size: 15px }
+.font-16 { font-size: 16px }
+.font-17 { font-size: 17px }
+.font-18 { font-size: 18px }
+.font-19 { font-size: 19px }
+.font-20 { font-size: 20px }
+.font-20 { font-size: 20px }
+
+.reverse {
+  transform: rotateY(180deg);
+}
+
+.reverse-180 {
+  transform: rotate(180deg);
+}
+
+.full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+.lj-disabled {
+  pointer-events: none
+}
+.lj-disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.h-24 { height: 24px; }

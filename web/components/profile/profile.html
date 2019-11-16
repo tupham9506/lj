@@ -1,0 +1,13 @@
+<section class="profile" v-if="user">
+  {{ user.name }}
+  <div>
+    <Fa :icon="['fas', 'gift']" />
+    <span>
+      {{ $moment([user.dob_year, user.dob_month - 1, user.dob_day]).format($store.state.dateFormat) }}
+    </span>
+  </div>
+  <div>
+    
+  </div>
+</section>
+

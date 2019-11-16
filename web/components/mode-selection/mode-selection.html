@@ -1,0 +1,7 @@
+<div>
+  <select class="form-control" @change="selectMode" v-model="modeSelected">
+    <option :value="item" v-for="(item, index) in modeList" :key="`mode-selection-${index}`">
+      {{ $t(`modeSelection.${item}`) }}
+    </option>
+  </select>
+</div>

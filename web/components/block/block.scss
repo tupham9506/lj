@@ -1,0 +1,16 @@
+.block {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  background: #eee;
+}
+.block.past {
+  background: #CCC;
+}
+
+.block.now {
+  outline: 1px solid red;
+}

@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <ul class="list-group">
+    <li class="list-group-item auth-info">
+      <div class="float-left">
+        <avatar :avatar="auth.avatar" :is-absolute-avatar="auth.is_absolute_avatar" />
+      </div>
+      <div class="float-left ml-3">
+        <a href="javascript:void(0)">{{ auth.name }}</a>
+        <div class="option">
+          <mdb-dropdown>
+              <mdb-dropdown-toggle slot="toggle" size="sm">
+                <Fa :icon="['fas', 'cog']" />
+                {{ $t('sidebar.option') }}
+              </mdb-dropdown-toggle>
+              <mdb-dropdown-menu color="primary">
+                <mdb-dropdown-item>
+                  <a href="javascript:void(0)" @click="logout">{{ $t('sidebar.logout') }}</a>
+                </mdb-dropdown-item>
+              </mdb-dropdown-menu>
+            </mdb-dropdown>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
