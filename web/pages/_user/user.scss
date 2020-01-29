@@ -1,0 +1,19 @@
+.user {
+  width: 100%;
+  min-height: calc(100% - 50px);
+  padding: 10px;
+  padding-top: 60px;
+}
+
+.journey {
+  width:  calc(75% - 5px);
+  height: 100%;
+}
+
+.event {
+  width: calc(25% - 5px);
+  height: calc(100% - 70px);
+  position: fixed;
+  right: 10px;
+  top: 60px;
+}

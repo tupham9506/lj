@@ -47,3 +47,18 @@
 }
 
 .h-24 { height: 24px; }
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.lj-blur-content {
+  pointer-events: none;
+  opacity: 0.5
+}
+
+
+// Replace mdb
+.btn, .badge {
+  box-shadow: none !important;
+}

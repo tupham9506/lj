@@ -1,4 +1,10 @@
 {
+  "common": {
+    "commingSoon": "Comming soon"
+  },
+  "nav": {
+    "brand": "Lj"
+  },
   "login": {
     "bigTitle": "Hành Trình <br/> Của Bạn",
     "loginTitle_login": "Đăng nhập",
@@ -19,10 +25,12 @@
     "lifespan": "Tuổi thọ ước tính"
   },
   "journey": {
-    "viewMode": "Chế độ xem",
+    "viewMode": "Xem theo",
     "youPast": "Đã trải qua",
     "life": "cuộc đời",
-    "lived": "Đã sống"
+    "lived": "Đã sống",
+    "dateSelected": "Đang chọn",
+    "dateHover": "Đang trỏ đến"
   },
   "modeSelection": {
     "days": "Ngày",
@@ -32,6 +40,14 @@
   },
   "sidebar": {
     "option": "Tuỳ chọn",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "event": "Sự kiện",
+    "friend": "Bạn bè"
+  },
+  "event": {
+    "writeSomething": "Viết gì đó đánh dấu cột mốc của bạn",
+    "submit": "Lưu",
+    "isEventLoading": "Đang tải nội dung",
+    "cancel": "Huỷ"
   }
 }

@@ -38,6 +38,7 @@ export default {
     '~/plugins/mdbootstrap.js',
     '~/plugins/component.js',
     '~/plugins/moment.js',
+    '~/plugins/vue-datepicker.js',
     {
       src: '~/plugins/common.js',
       mode: 'client'
@@ -90,10 +91,10 @@ export default {
   },
   server: {
     port: '9507',
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, 'hanhtrinh.dev-key.pem')),
-      cert: fs.readFileSync(path.resolve(__dirname, 'hanhtrinh.dev.pem'))
-    }
+    // https: {
+    //   key: fs.readFileSync(path.resolve(__dirname, 'hanhtrinh.dev-key.pem')),
+    //   cert: fs.readFileSync(path.resolve(__dirname, 'hanhtrinh.dev.pem'))
+    // }
   },
   router: {
     middleware: 'i18n'

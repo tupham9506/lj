@@ -2,10 +2,9 @@
 export default {
   name: 'block',
   components: {},
-  props: ['block'],
+  props: ['block', 'blockSelected'],
   data () {
     return {
-      now: this.$moment()
     }
   },
   computed: {

@@ -2,7 +2,7 @@ import avatar from '@components/avatar';
 import { mapState } from 'vuex';
 
 export default {
-  name: 'sidebar',
+  name: 'lj-nav',
   components: {
     avatar
   },
@@ -18,6 +18,7 @@ export default {
     })
   },
   mounted () {
+
   },
   methods: {
     logout () {

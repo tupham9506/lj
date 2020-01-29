@@ -55,9 +55,13 @@ class UserController extends Controller {
     return response()->json(['user' => $success], 200);
   }
 
-  public function show ($id) {
+  public function show ($id, Request $request) {
+    $input = $request->all();
+    $input['user_id'] = $id;
     $user = User::where([ 'account' => $id])->first();
-    return response()->json(['user' => $user]);
+    $eventList = Event::getList($input);
+    dd($eventList);
+    return response()->json(compact('user', 'eventList'));
   }
 
   public function loginFb(Request $request)

@@ -4,7 +4,15 @@ export default {
   components: {},
   props: {
     avatar: String,
-    isAbsoluteAvatar: Number
+    isAbsoluteAvatar: Number,
+    width: {
+      default: 50,
+      type: Number
+    },
+    height: {
+      default: 50,
+      type: Number
+    }
   },
   data () {
     return {
@@ -13,8 +21,12 @@ export default {
   },
   computed: {
     avatarStyle () {
+      let avatar = this.avatar || require('~/assets/images/default-avatar.jpg')
       return {
-        'background': `url(${this.avatar})`
+        'background': `url(${avatar})`,
+        'backgroundSize': 'cover',
+        'height': `${this.height}px`,
+        'width': `${this.width}px`
       };
     }
   },

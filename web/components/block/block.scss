@@ -6,15 +6,14 @@
   margin-right: 1px;
   margin-bottom: 1px;
   background: #eee;
+  text-align: center;
 }
 .block.past {
   background: #CCC;
 }
-
-.block.now {
-  outline: 1px solid red;
-}
-
 .block:hover {
-  outline: 1px solid #FF0000;
+  outline: 1px solid #33b5e5;
+}
+.block.selected {
+  outline: 1px solid #ff3547;
 }

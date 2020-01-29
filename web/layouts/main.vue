@@ -1,20 +1,21 @@
 <template>
   <div class="full-screen">
-    <div class="main" :class="{'w-100': ($route.path == '/')}">
-      <nuxt />
+    <div v-if="$route.path != '/'">
+      <ljNav />
     </div>
-    <div v-if="$route.path != '/'" class="sidebar">
-      <sidebar />
+    <div class="main">
+      <nuxt />
     </div>
   </div>
 </template>
 <script>
-  import sidebar from './sidebar';
+  // import sidebar from './sidebar';
+  import ljNav from './lj-nav';
   import auth from '@middleware/auth';
   export default {
     middleware: ['auth'],
     components: {
-      sidebar
+      ljNav
     }
   }
 </script>
@@ -27,6 +28,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+
 }
 
 #__nuxt, #__layout {
@@ -42,13 +44,15 @@ html {
 }
 .sidebar {
   float: left;
-  width: 20%;
-  height: 100%;
+  width: 25vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 .main {
-  float: left;
+  width: 100%;
   height: 100%;
-  width: 80%;
 }
 </style>

@@ -1,0 +1,24 @@
+<mdb-navbar class="fixed-top lj-nav" color="info" dark>
+  <mdb-navbar-brand class="font-weight-bold" href="/">
+    {{ $t('nav.brand') }}
+  </mdb-navbar-brand>
+  <mdb-navbar-toggler>
+    <mdb-navbar-nav>
+    </mdb-navbar-nav>
+    <nuxt-link :to="auth.account" class="mr-3 auth-info">
+        <avatar class="float-left mr-1" :width="20" :height="20" :avatar="auth.avatar" :is-absolute-avatar="auth.is_absolute_avatar" />
+        <span class="float-left auth-name">{{ auth.name }}</span>
+        <div class="clearfix"></div>
+      </nuxt-link>
+      <mdb-dropdown class="option">
+        <mdb-dropdown-toggle slot="toggle">
+          <Fa :icon="['fas', 'cog']" />
+        </mdb-dropdown-toggle>
+        <mdb-dropdown-menu color="primary">
+          <mdb-dropdown-item>
+            <a href="javascript:void(0)" @click="logout">{{ $t('sidebar.logout') }}</a>
+          </mdb-dropdown-item>
+        </mdb-dropdown-menu>
+      </mdb-dropdown>
+  </mdb-navbar-toggler>
+</mdb-navbar>

@@ -25,7 +25,9 @@ class User extends Authenticatable
         'dob_day',
         'avatar',
         'is_absolute_avatar',
-        'status'
+        'status',
+        'lifespan',
+        'locale'
     ];
 
     /**

@@ -1,10 +1,54 @@
-<div>
-  <mdb-modal :show="modal" @close="modal = false">
-    <mdb-modal-body>...</mdb-modal-body>
-    <mdb-modal-footer>
-      <mdb-btn color="secondary" @click.native="modal = false">Close</mdb-btn>
-      <mdb-btn color="primary">Save changes</mdb-btn>
-    </mdb-modal-footer>
-  </mdb-modal>
+<div class="event">
+  <div class="event-editor">
+    <div v-html="eventContentHtml" class="event-box" contenteditable="content" :placeholder="$t('event.writeSomething')" @keyup="updateContent">
+    </div>
+    <div class="date-picker float-left mt-1">
+      <div class="input-group mb-3">
+        <datepicker
+          :value="selectedDate"
+          :format="'dd/MM/yyyy'"
+          :language="$datepicker[$store.state.locale]"
+          :monday-first="true"
+          @selected="selectDate"
+          :calendar-button-icon-content="'event'"
+          :input-class="'fix-calendar-input'"
+        >
+        <span slot="afterDateInput" class="fix-calendar-icon">
+          <Fa :icon="['fas', 'calendar']"/>
+        </span>
+      </datepicker>
+      </div>
+    </div>
+    <button type="button" class="btn btn-sm btn-info float-right" @click="submit" :disabled="!eventContent || isLoading == 'submit'">
+      <Fa v-if="isLoading == 'submit'" :icon="['fas', 'spinner']" />
+      {{ $t('event.submit') }}
+    </button>
+    <button type="button" class="btn btn-light btn-sm float-right" v-if="editMode" @click="cancelEditEvent">
+      {{ $t('event.cancel') }}
+    </button>
+    <div class="clearfix"></div>
+  </div>
+  <div class="event-list" :class="{'lj-blur-content': editMode}" v-if="isLoading != 'eventList'">
+    <div class="event-item" v-for="(item, index) in eventList" :key="`event-${index}`">
+      <div class="title">
+        <span class="time">
+          {{ $moment(item.time).format($store.state.dateFormat) }}
+        </span>
+        <div class="option option-delete">
+          <Fa :icon="['fas', 'trash']" />
+        </div>
+        <div class="option option-edit" @click="editEvent(item)">
+          <Fa :icon="['fas', 'pen']" />
+        </div>
+      </div>
+      <div class="content">
+        {{ item.content }}
+      </div>
+    </div>
+  </div>
+  <div class="event-list-loading" v-else="isLoading == 'eventList'">
+    <Fa :icon="['fas', 'spinner']" class="mr-1" />
+    {{ $t('event.isEventLoading') }}
+  </div>
 </div>
 

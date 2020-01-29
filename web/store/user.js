@@ -13,9 +13,9 @@ export const mutations = {
 }
 
 export const actions = {
-  async getUserDetail (context, account) {
+  async getUserDetail (context, params) {
     let response = await common.request({
-      url: `/api/show/${account}`
+      url: `/api/show/${params.id}?time=${params.time}`,
     });
 
     context.commit('setUserAccount', response.data.user);

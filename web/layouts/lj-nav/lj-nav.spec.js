@@ -1,28 +1,28 @@
 import Vue from 'vue';
-import SidebarComponent from './index.vue';
+import LjnavComponent from './index.vue';
 
 // Here are some Jasmine 2.0 tests, though you can
 // use any test runner / assertion library combo you prefer
-describe('SidebarComponent', () => {
+describe('LjnavComponent', () => {
   // Inspect the raw component options
   it('has a created hook', () => {
-    // expect(typeof SidebarComponent.created).toBe('function');
+    // expect(typeof LjnavComponent.created).toBe('function');
   })
   // Evaluate the results of functions in
   // the raw component options
   it('sets the correct default data', () => {
-    // expect(typeof SidebarComponent.data).toBe('function')
-    // const defaultData = SidebarComponent.data();
+    // expect(typeof LjnavComponent.data).toBe('function')
+    // const defaultData = LjnavComponent.data();
     // expect(defaultData.message).toBe('hello!');
   })
   // Inspect the component instance on mount
   it('correctly sets the message when created', () => {
-    // const vm = new Vue(SidebarComponent).$mount();
+    // const vm = new Vue(LjnavComponent).$mount();
     // expect(vm.message).toBe('bye!');
   })
   // Mount an instance and inspect the render output
   it('renders the correct message', () => {
-    // const Ctor = Vue.extend(SidebarComponent);
+    // const Ctor = Vue.extend(LjnavComponent);
     // const vm = new Ctor().$mount();
     // expect(vm.$el.textContent).toBe('bye!');
   })

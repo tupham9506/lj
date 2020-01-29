@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
           $table->integer('lifespan')->default(80);
           $table->string('avatar', 1000)->nullable();
           $table->boolean('is_absolute_avatar')->default(0);
+          $table->string('locale', 8)->default('vi');
           $table->boolean('status')->default(1);
           $table->rememberToken();
           $table->timestamps();

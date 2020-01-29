@@ -1,13 +1,13 @@
-.sidebar {
-  height: 100%;
-  width: 100%;
-  border-left: 1px solid #ddd;
+.lj-nav {
+
 }
 
 .auth-info {
   border:none;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
   padding: 10px;
+  .auth-name {
+    color: #FFF;
+  }
 }
 
 .option {
@@ -20,6 +20,7 @@
     box-shadow: none;
     font-size: 12px;
     font-weight: 300;
+    color: #FFF;
   }
   .dropdown-toggle::after {
     display: none;

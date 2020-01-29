@@ -22,4 +22,10 @@ Route::post('register', 'UserController@register');
 Route::post('login-fb', 'UserController@loginFb');
 Route::group(['middleware' => 'auth:api'], function(){
   Route::get('/show/{id}', 'UserController@show');
+  Route::group(['prefix' => 'event'], function(){
+    Route::get('/get-list', 'EventController@getEventList');
+    Route::post('/save', 'EventController@save');
+  });
+  // Home route
+  Route::resource('home', 'HomeController');
 });

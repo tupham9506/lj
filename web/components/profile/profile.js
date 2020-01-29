@@ -1,7 +1,9 @@
-
+import avatar from '@components/avatar';
 export default {
   name: 'profile',
-  components: {},
+  components: {
+    avatar
+  },
   props: {
     'user': Object
   },

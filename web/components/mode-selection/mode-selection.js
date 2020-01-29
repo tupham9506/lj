@@ -7,7 +7,7 @@ export default {
     return {
       modeList: [
         'days',
-        'weeks',
+        // 'weeks',
         'months',
         'years'
       ],
