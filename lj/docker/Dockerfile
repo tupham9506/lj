@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER quanhv <quanhdnc@gmail.com>
+MAINTAINER tupham9506 <tupham9506@gmail.com>
 
 RUN DEBIAN_FRONTEND=noninteractive
 
